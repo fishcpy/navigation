@@ -103,9 +103,11 @@
             }
 
             .footer-bottom {
-                position: relative;
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 width: auto;
-                margin: 0 auto;
                 padding: 5px 20px;
                 text-align: center;
                 font-size: 0.8em;
@@ -114,6 +116,11 @@
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 backdrop-filter: blur(40px);
                 mix-blend-mode: normal;
+                z-index: 999;
+            }
+            .main {
+                position: static;
+                margin-bottom: 60px;
             }
 
             .footer-bottom a {
