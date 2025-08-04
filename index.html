@@ -54,14 +54,20 @@
                 pointer-events: none;
                 text-align: center;
                 mix-blend-mode: difference;
-                overflow-y: auto; /* 允许垂直滚动 */
-                padding-bottom: 6rem; /* 给页脚预留空间 */
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                padding: 0;
+                margin: 0;
             }
             .main {
-                position: absolute;
-                top: 25%;
-                left: 0;
-                right: 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 10vh;
+                padding-bottom: 0;
             }
             h1 {
                 color: #fff;
@@ -103,22 +109,27 @@
             }
 
             .footer-bottom {
-                position: relative;
-                width: auto;
-                margin: 0 auto;
-                padding: 5px 20px;
+                width: 100%;
+                margin: 1rem 0 0 0;
+                padding: 8px 0;
                 text-align: center;
                 font-size: 0.8em;
                 color: #ccc;
                 background-color: rgba(255, 255, 255, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.3);
                 backdrop-filter: blur(40px);
                 mix-blend-mode: normal;
+                flex-shrink: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
 
             .footer-bottom a {
                 color: #ccc;
                 text-decoration: none;
+            }
+
+            .footer-bottom p {
+                margin: 0;
+                padding: 0;
             }
 
             @keyframes animate {
@@ -143,6 +154,17 @@
                 h1 {
                     font-size: 4.5rem;
                 }
+            }
+            
+            .main {
+                justify-content: flex-start;
+                padding-bottom: 0;
+            }
+            .wrap {
+                justify-content: space-between;
+            }
+            .footer-bottom {
+                margin-top: auto;
             }
         </style>
         <script>
@@ -187,7 +209,7 @@
                 </div>
                </div>
         </div>
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/script.js"></script>
+        <script src="assets/script.js"></script>
     <script>
         document.addEventListener('wheel', function(event) {
             const wrap = document.querySelector('.wrap');
